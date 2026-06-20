@@ -17,7 +17,7 @@
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
 
-    <!-- PANTALLA SPLASH CON EL LOGO DEL IPEM -->
+    <!-- PANTALLA SPLASH CON EL LOGO DEL IPEM (Configurada a 4 segundos) -->
     <div id="splash-screen" class="fixed inset-0 bg-indigo-900 flex flex-col justify-center items-center z-50 transition-opacity duration-500">
         <div class="text-center space-y-5 max-w-xs px-4">
             <!-- Imagen del Logo Institucional -->
@@ -30,7 +30,7 @@
                     Welcome to English Class
                 </h1>
                 <p class="text-indigo-200 text-xs font-semibold tracking-wide uppercase">
-                    Aprendiendo ingles en el Saavedra!
+                    IPEM N°181 Brig. Gral. Cornelio de Saavedra
                 </p>
                 <p class="text-indigo-300 text-xs italic">
                     Preparando la lección de la Profe Belén...
@@ -45,8 +45,8 @@
     <!-- CONTENIDO PRINCIPAL DE LA WEB -->
     <div id="main-content" class="opacity-0 transition-opacity duration-500">
         
-        <!-- Barra de Navegación con el Logo Incorporado -->
-        <nav class="bg-indigo-650 text-white shadow-md px-6 py-3 flex flex-col sm:flex-row justify-between items-center gap-3">
+        <!-- Barra de Navegación -->
+        <nav class="bg-indigo-600 text-white shadow-md px-6 py-3 flex flex-col sm:flex-row justify-between items-center gap-3">
             <div class="flex items-center gap-3">
                 <img src="logo.jpg" alt="Logo IPEM" class="w-10 h-10 object-contain bg-white rounded-full p-0.5 shadow-sm">
                 <h1 class="text-lg font-black tracking-wide text-center sm:text-left uppercase">
@@ -116,13 +116,14 @@
 
     <script>
         window.addEventListener('DOMContentLoaded', () => {
+            // Configurado a 4000 ms (4 segundos)
             setTimeout(() => {
                 const splash = document.getElementById('splash-screen');
                 const content = document.getElementById('main-content');
                 splash.classList.add('opacity-0');
                 content.classList.remove('opacity-0');
                 setTimeout(() => splash.remove(), 500);
-            }, 4000);
+            }, 4000); 
         });
 
         function verificarRespuesta(esCorrecta, elemento, palabra) {
