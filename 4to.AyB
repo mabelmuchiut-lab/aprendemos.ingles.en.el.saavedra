@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clases de Inglés - Profe Belén</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <nav class="bg-indigo-600 text-white shadow-md px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-2">
+        <h1 class="text-xl font-bold tracking-wide text-center sm:text-left">
+            🇬🇧 CLASES DE INGLÉS CON LA PROFE BELÉN
+        </h1>
+        <div class="flex items-center gap-4">
+            <span class="text-sm bg-indigo-700 px-3 py-1 rounded-full font-medium">Nivel: B1</span>
+            <span class="font-semibold text-sm">Progreso: 40%</span>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto my-8 px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <aside class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 h-fit">
+            <h3 class="font-bold text-lg mb-4 text-gray-700 border-b pb-2 border-gray-100">
+                Alumnos de 4to. Año A y B
+            </h3>
+            <ul class="space-y-3">
+                <li class="p-3 bg-indigo-50 text-indigo-700 rounded-xl font-medium border border-indigo-200 cursor-pointer">
+                    🚀 1. ¡Arrancamos con todo!
+                </li>
+                <li class="p-3 hover:bg-gray-50 text-gray-600 rounded-xl cursor-pointer transition">
+                    📝 2. Vemos los integrantes de la familia en Ingles!!
+                </li>
+                <li class="p-3 hover:bg-gray-50 text-gray-600 rounded-xl cursor-pointer transition">
+                    💼 3. Las Profesiones en Ingles
+                </li>
+            </ul>
+        </aside>
+
+        <section class="md:col-span-2 space-y-6">
+            
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">Lección 1</span>
+                <h2 class="text-2xl font-bold mt-1 mb-3 text-gray-900">Present Simple vs. Present Continuous</h2>
+                <p class="text-gray-600 mb-4 leading-relaxed">
+                    Usamos el <strong>Present Simple</strong> para rutinas u hechos generales (<em>"I work every day"</em>). Usamos el <strong>Present Continuous</strong> para acciones que están ocurriendo justo ahora (<em>"I am working right now"</em>).
+                </p>
+                
+                <div class="bg-gray-50 p-4 rounded-xl border border-gray-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <div>
+                        <p class="font-semibold text-sm text-gray-700">🎧 Escucha el ejemplo:</p>
+                        <p class="text-xs text-gray-500 font-mono mt-0.5">"Hey! What are you doing?"</p>
+                    </div>
+                    <audio controls class="h-8 max-w-full">
+                        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                <h3 class="font-bold text-lg text-gray-900 mb-2">✏️ ¡Es tu turno de practicar!</h3>
+                <p class="text-sm text-gray-600 mb-4">Completa la siguiente oración eligiendo la opción correcta:</p>
+                
+                <div class="p-4 bg-amber-50 rounded-xl border border-amber-200 text-center font-serif text-lg my-4 text-gray-800">
+                    "Look! It <span id="target-word" class="border-b-2 border-dashed border-amber-500 px-4 text-gray-400 font-sans font-medium">______</span> outside right now."
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <button onclick="verificarRespuesta(false, this, 'rains')" class="p-3 border border-gray-200 rounded-xl font-medium hover:bg-gray-50 active:scale-[0.98] transition text-left cursor-pointer option-btn">
+                        A) rains
+                    </button>
+                    <button onclick="verificarRespuesta(true, this, 'is raining')" class="p-3 border border-gray-200 rounded-xl font-medium hover:bg-gray-50 active:scale-[0.98] transition text-left cursor-pointer option-btn">
+                        B) is raining
+                    </button>
+                </div>
+
+                <p id="feedback" class="mt-4 text-center font-medium hidden p-3 rounded-xl"></p>
+            </div>
+
+        </section>
+    </main>
+
+    <script>
+        function verificarRespuesta(esCorrecta, elemento, palabra) {
+            const feedback = document.getElementById('feedback');
+            const targetWord = document.getElementById('target-word');
+            const botones = document.querySelectorAll('.option-btn');
+            
+            // Resetear estados de los botones
+            botones.forEach(btn => {
+                btn.classList.remove('bg-green-100', 'border-green-400', 'bg-red-100', 'border-red-400 text-gray-800');
+            });
+
+            feedback.classList.remove('hidden', 'bg-green-50', 'text-green-700', 'bg-red-50', 'text-red-700');
+            
+            if (esCorrecta) {
+                feedback.innerText = "🎉 ¡Excelente! Usamos Present Continuous por la frase clave 'right now'.";
+                feedback.classList.add('bg-green-50', 'text-green-700');
+                elemento.classList.add('bg-green-100', 'border-green-400');
+                
+                // Efecto visual: rellenar el espacio en blanco con la respuesta
+                targetWord.innerText = palabra;
+                targetWord.classList.remove('text-gray-400', 'border-dashed');
+                targetWord.classList.add('text-indigo-600', 'border-solid');
+            } else {
+                feedback.innerText = "❌ Inténtalo de nuevo. Recuerda que es una acción que está pasando en este preciso momento.";
+                feedback.classList.add('bg-red-50', 'text-red-700');
+                elemento.classList.add('bg-red-100', 'border-red-400');
+                
+                // Resetear espacio en blanco si falla
+                targetWord.innerText = "______";
+                targetWord.classList.add('text-gray-400', 'border-dashed');
+                targetWord.classList.remove('text-indigo-600', 'border-solid');
+            }
+        }
+    </script>
+</body>
+</html>
