@@ -7,7 +7,7 @@
     <!-- Cargamos Tailwind CSS para el diseño -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="bg-gray-50 text-gray-800 font-sans scroll-smooth">
 
     <!-- Barra de Navegación -->
     <nav class="bg-indigo-600 text-white shadow-md px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-2">
@@ -32,8 +32,11 @@
                 <li class="p-3 bg-indigo-50 text-indigo-700 rounded-xl font-medium border border-indigo-200 cursor-pointer">
                     🚀 1. ¡Arrancamos con todo!
                 </li>
-                <li class="p-3 hover:bg-gray-50 text-gray-600 rounded-xl cursor-pointer transition">
-                    📝 2. Vemos los integrantes de la family en Ingles!!
+                <!-- El botón ahora es un enlace que lleva al juego de abajo -->
+                <li>
+                    <a href="#juego-simpsons" class="block p-3 hover:bg-indigo-50 hover:text-indigo-700 rounded-xl cursor-pointer transition border border-transparent hover:border-indigo-200 text-gray-600 font-medium">
+                        📝 2. Vemos los integrantes de la family en Ingles!!
+                    </a>
                 </li>
                 <li class="p-3 hover:bg-gray-50 text-gray-600 rounded-xl cursor-pointer transition">
                     💼 3. Las Profesiones en Ingles
@@ -65,8 +68,8 @@
                 </div>
             </div>
 
-            <!-- JUEGO: Árbol Genealógico con Imagen Corregida -->
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+            <!-- JUEGO: Árbol Genealógico (ID añadido para el salto de pantalla) -->
+            <div id="juego-simpsons" class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 scroll-mt-6">
                 <span class="text-xs font-bold uppercase tracking-wider text-amber-500">Vocabulary Game 🍩</span>
                 <h2 class="text-2xl font-bold mt-1 mb-2 text-gray-900">The Simpsons Family Tree</h2>
                 <p class="text-sm text-gray-600 mb-6">Mira el árbol genealógico de abajo y haz clic en el botón de cualquier personaje para descubrir su parentesco en inglés:</p>
