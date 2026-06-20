@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clases de Inglés - Profe Belén</title>
+    <!-- Cargamos Tailwind CSS para el diseño -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
 
+    <!-- Barra de Navegación -->
     <nav class="bg-indigo-600 text-white shadow-md px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-2">
         <h1 class="text-xl font-bold tracking-wide text-center sm:text-left">
             🇬🇧 CLASES DE INGLÉS CON LA PROFE BELÉN
@@ -18,8 +20,10 @@
         </div>
     </nav>
 
+    <!-- Contenedor Principal -->
     <main class="max-w-4xl mx-auto my-8 px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
         
+        <!-- Columna Izquierda: Secciones de 4to Año -->
         <aside class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 h-fit">
             <h3 class="font-bold text-lg mb-4 text-gray-700 border-b pb-2 border-gray-100">
                 Alumnos de 4to. Año A y B
@@ -37,8 +41,10 @@
             </ul>
         </aside>
 
+        <!-- Columna Derecha: Contenido de la Lección -->
         <section class="md:col-span-2 space-y-6">
             
+            <!-- Bloque de Teoría -->
             <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
                 <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">Lección 1</span>
                 <h2 class="text-2xl font-bold mt-1 mb-3 text-gray-900">Present Simple vs. Present Continuous</h2>
@@ -46,6 +52,7 @@
                     Usamos el <strong>Present Simple</strong> para rutinas u hechos generales (<em>"I work every day"</em>). Usamos el <strong>Present Continuous</strong> para acciones que están ocurriendo justo ahora (<em>"I am working right now"</em>).
                 </p>
                 
+                <!-- Sección de Listening -->
                 <div class="bg-gray-50 p-4 rounded-xl border border-gray-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                     <div>
                         <p class="font-semibold text-sm text-gray-700">🎧 Escucha el ejemplo:</p>
@@ -58,6 +65,51 @@
                 </div>
             </div>
 
+            <!-- NUEVO JUEGO: La Familia de Los Simpson -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                <span class="text-xs font-bold uppercase tracking-wider text-amber-500">Vocabulary Game 🍩</span>
+                <h2 class="text-2xl font-bold mt-1 mb-2 text-gray-900">The Simpsons Family Tree</h2>
+                <p class="text-sm text-gray-600 mb-6">¡Haz clic sobre cualquier personaje para descubrir cómo se dice su parentesco en inglés!</p>
+                
+                <!-- Botones de los Personajes -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+                    <button onclick="mostrarFamiliar('Homer', 'Father / Dad', 'Fá-der / Dæd', 'Homer is Bart\'s father.')" class="p-3 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-xl font-bold text-center transition transform active:scale-95 cursor-pointer text-gray-800">
+                        👨‍🦲 Homer
+                    </button>
+                    <button onclick="mostrarFamiliar('Marge', 'Mother / Mom', 'Má-der / Mám', 'Marge is Lisa\'s mother.')" class="p-3 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-xl font-bold text-center transition transform active:scale-95 cursor-pointer text-gray-800">
+                        👩‍🦱 Marge
+                    </button>
+                    <button onclick="mostrarFamiliar('Bart', 'Brother', 'Brá-der', 'Bart is Maggie\'s brother.')" class="p-3 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-xl font-bold text-center transition transform active:scale-95 cursor-pointer text-gray-800">
+                        👦 Bart
+                    </button>
+                    <button onclick="mostrarFamiliar('Lisa', 'Sister', 'Sís-ter', 'Lisa is Bart\'s sister.')" class="p-3 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-xl font-bold text-center transition transform active:scale-95 cursor-pointer text-gray-800">
+                        👧 Lisa
+                    </button>
+                    <button onclick="mostrarFamiliar('Herb Powell', 'Uncle', 'Án-kl', 'Herb is Homer\'s half-brother, so he is Bart\'s uncle.')" class="p-3 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-xl font-bold text-center transition transform active:scale-95 cursor-pointer text-gray-800">
+                        👨💼 Herb
+                    </button>
+                    <button onclick="mostrarFamiliar('Patty / Selma', 'Aunt', 'Ant', 'Patty and Selma are Lisa\'s aunts.')" class="p-3 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-xl font-bold text-center transition transform active:scale-95 cursor-pointer text-gray-800">
+                        👩‍🦰 Patty / Selma
+                    </button>
+                    <button onclick="mostrarFamiliar('Abe Simpson', 'Grandfather / Grandpa', 'Grænd-fá-der', 'Abe is the grandfather of the family.')" class="p-3 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-xl font-bold text-center transition transform active:scale-95 cursor-pointer text-gray-800">
+                        👴 Abe (Grandpa)
+                    </button>
+                    <button onclick="mostrarFamiliar('Ling Bouvier', 'Cousin', 'Cá-sin', 'Ling is Bart, Lisa, and Maggie\'s cousin.')" class="p-3 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-xl font-bold text-center transition transform active:scale-95 cursor-pointer text-gray-800">
+                        👶 Ling
+                    </button>
+                </div>
+
+                <!-- Tarjeta Dinámica de Resultados -->
+                <div id="simpsons-card" class="hidden p-5 bg-gradient-to-r from-amber-50 to-orange-50 border-2 border-amber-400 rounded-2xl shadow-inner text-center animate-fade-in">
+                    <h4 id="simp-nombre" class="text-lg font-black text-amber-600 uppercase tracking-wide"></h4>
+                    <p class="text-gray-500 text-xs my-1">Parentesco en Inglés:</p>
+                    <div id="simp-ingles" class="text-3xl font-extrabold text-indigo-700 my-2"></div>
+                    <p id="simp-pronunciacion" class="text-sm italic text-gray-600 font-mono bg-white inline-block px-3 py-1 rounded-full shadow-sm border border-gray-100 mb-3"></p>
+                    <p id="simp-ejemplo" class="text-gray-700 font-medium bg-indigo-50 p-3 rounded-xl border border-indigo-100 text-sm"></p>
+                </div>
+            </div>
+
+            <!-- Bloque de Práctica / Quiz -->
             <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
                 <h3 class="font-bold text-lg text-gray-900 mb-2">✏️ ¡Es tu turno de practicar!</h3>
                 <p class="text-sm text-gray-600 mb-4">Completa la siguiente oración eligiendo la opción correcta:</p>
@@ -81,13 +133,31 @@
         </section>
     </main>
 
+    <!-- Lógica JavaScript -->
     <script>
+        // Nueva función para manejar la sección de Los Simpson
+        function mostrarFamiliar(nombre, parentescoIngles, pronunciacion, ejemplo) {
+            const tarjeta = document.getElementById('simpsons-card');
+            const txtNombre = document.getElementById('simp-nombre');
+            const txtIngles = document.getElementById('simp-ingles');
+            const txtPronunciacion = document.getElementById('simp-pronunciacion');
+            const txtEjemplo = document.getElementById('simp-ejemplo');
+
+            // Insertar datos dinámicamente
+            txtNombre.innerText = nombre;
+            txtIngles.innerText = parentescoIngles;
+            txtPronunciacion.innerText = `Pronunciación: / ${pronunciacion} /`;
+            txtEjemplo.innerText = `💡 Ejemplo: ${ejemplo}`;
+
+            // Mostrar la tarjeta con una transición suave
+            tarjeta.classList.remove('hidden');
+        }
+
         function verificarRespuesta(esCorrecta, elemento, palabra) {
             const feedback = document.getElementById('feedback');
             const targetWord = document.getElementById('target-word');
             const botones = document.querySelectorAll('.option-btn');
             
-            // Resetear estados de los botones
             botones.forEach(btn => {
                 btn.classList.remove('bg-green-100', 'border-green-400', 'bg-red-100', 'border-red-400 text-gray-800');
             });
@@ -99,7 +169,6 @@
                 feedback.classList.add('bg-green-50', 'text-green-700');
                 elemento.classList.add('bg-green-100', 'border-green-400');
                 
-                // Efecto visual: rellenar el espacio en blanco con la respuesta
                 targetWord.innerText = palabra;
                 targetWord.classList.remove('text-gray-400', 'border-dashed');
                 targetWord.classList.add('text-indigo-600', 'border-solid');
@@ -108,7 +177,6 @@
                 feedback.classList.add('bg-red-50', 'text-red-700');
                 elemento.classList.add('bg-red-100', 'border-red-400');
                 
-                // Resetear espacio en blanco si falla
                 targetWord.innerText = "______";
                 targetWord.classList.add('text-gray-400', 'border-dashed');
                 targetWord.classList.remove('text-indigo-600', 'border-solid');
