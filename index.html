@@ -7,7 +7,7 @@
     <!-- Cargamos Tailwind CSS para el diseño -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans scroll-smooth">
+<body class="bg-gray-50 text-gray-800 font-sans">
 
     <!-- Barra de Navegación -->
     <nav class="bg-indigo-600 text-white shadow-md px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-2">
@@ -23,52 +23,54 @@
     <!-- Contenedor Principal -->
     <main class="max-w-4xl mx-auto my-8 px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
         
-        <!-- Columna Izquierda: Menú con BOTONES REALES de Derivación -->
-        <aside class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 h-fit sticky top-6">
+        <!-- Columna Izquierda: Menú de Navegación (Cambia de pantalla) -->
+        <aside class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 h-fit">
             <h3 class="font-bold text-lg mb-4 text-gray-700 border-b pb-2 border-gray-100">
                 Alumnos de 4to. Año A y B
             </h3>
             <div class="space-y-3">
                 <!-- Botón 1 -->
-                <button onclick="irASeccion('seccion-teoria')" class="w-full text-left p-3 bg-indigo-50 text-indigo-700 rounded-xl font-medium border border-indigo-200 cursor-pointer transition hover:bg-indigo-100 text-center md:text-left block">
+                <button id="btn-teoria" onclick="cambiarPantalla('seccion-teoria', this)" class="w-full text-left p-3 bg-indigo-600 text-white rounded-xl font-medium cursor-pointer transition text-center md:text-left block shadow-sm">
                     🚀 1. ¡Arrancamos con todo!
                 </button>
                 <!-- Botón 2 -->
-                <button onclick="irASeccion('juego-simpsons')" class="w-full text-left p-3 bg-amber-50 text-amber-700 rounded-xl font-medium border border-amber-200 cursor-pointer transition hover:bg-amber-100 text-center md:text-left block">
+                <button id="btn-simpsons" onclick="cambiarPantalla('juego-simpsons', this)" class="w-full text-left p-3 bg-gray-100 text-gray-600 hover:bg-amber-50 hover:text-amber-700 rounded-xl font-medium cursor-pointer transition text-center md:text-left block border border-transparent">
                     📝 2. Vemos los integrantes de la family en Ingles!!
                 </button>
                 <!-- Botón 3 -->
-                <button onclick="irASeccion('seccion-profesiones')" class="w-full text-left p-3 bg-emerald-50 text-emerald-700 rounded-xl font-medium border border-emerald-200 cursor-pointer transition hover:bg-emerald-100 text-center md:text-left block">
+                <button id="btn-profesiones" onclick="cambiarPantalla('seccion-profesiones', this)" class="w-full text-left p-3 bg-gray-100 text-gray-600 hover:bg-emerald-50 hover:text-emerald-700 rounded-xl font-medium cursor-pointer transition text-center md:text-left block border border-transparent">
                     💼 3. Las Profesiones en Ingles
                 </button>
             </div>
         </aside>
 
-        <!-- Columna Derecha: Contenido de las Lecciones -->
-        <section class="md:col-span-2 space-y-6">
+        <!-- Columna Derecha: Contenedor de Pantallas -->
+        <section class="md:col-span-2">
             
-            <!-- SECCIÓN 1: Bloque de Teoría (Arrancamos con todo) -->
-            <div id="seccion-teoria" class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 scroll-mt-6">
-                <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">Lección 1</span>
-                <h2 class="text-2xl font-bold mt-1 mb-3 text-gray-900">Present Simple vs. Present Continuous</h2>
-                <p class="text-gray-600 mb-4 leading-relaxed">
-                    Usamos el <strong>Present Simple</strong> para rutinas u hechos generales (<em>"I work every day"</em>). Usamos el <strong>Present Continuous</strong> para acciones que están ocurriendo justo ahora (<em>"I am working right now"</em>).
-                </p>
-                
-                <!-- Sección de Listening -->
-                <div class="bg-gray-50 p-4 rounded-xl border border-gray-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                    <div>
-                        <p class="font-semibold text-sm text-gray-700">🎧 Escucha el ejemplo:</p>
-                        <p class="text-xs text-gray-500 font-mono mt-0.5">"Hey! What are you doing?"</p>
+            <!-- PANTALLA 1: Bloque de Teoría (Visible por defecto) -->
+            <div id="seccion-teoria" class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-6 global-screen">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">Lección 1</span>
+                    <h2 class="text-2xl font-bold mt-1 mb-3 text-gray-900">Present Simple vs. Present Continuous</h2>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Usamos el <strong>Present Simple</strong> para rutinas u hechos generales (<em>"I work every day"</em>). Usamos el <strong>Present Continuous</strong> para acciones que están ocurriendo justo ahora (<em>"I am working right now"</em>).
+                    </p>
+                    
+                    <!-- Sección de Listening -->
+                    <div class="bg-gray-50 p-4 rounded-xl border border-gray-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div>
+                            <p class="font-semibold text-sm text-gray-700">🎧 Escucha el ejemplo:</p>
+                            <p class="text-xs text-gray-500 font-mono mt-0.5">"Hey! What are you doing?"</p>
+                        </div>
+                        <audio controls class="h-8 max-w-full">
+                            <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                            Tu navegador no soporta el elemento de audio.
+                        </audio>
                     </div>
-                    <audio controls class="h-8 max-w-full">
-                        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
-                        Tu navegador no soporta el elemento de audio.
-                    </audio>
                 </div>
 
                 <!-- Bloque de Práctica / Quiz -->
-                <div class="mt-6 pt-6 border-t border-gray-100">
+                <div class="pt-6 border-t border-gray-100">
                     <h3 class="font-bold text-base text-gray-900 mb-2">✏️ ¡Es tu turno de practicar!</h3>
                     <p class="text-xs text-gray-600 mb-4">Completa la siguiente oración eligiendo la opción correcta:</p>
                     
@@ -88,8 +90,8 @@
                 </div>
             </div>
 
-            <!-- SECCIÓN 2: JUEGO: Árbol Genealógico (Integrantes de la familia) -->
-            <div id="juego-simpsons" class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 scroll-mt-6">
+            <!-- PANTALLA 2: JUEGO: Árbol Genealógico (Oculto al inicio) -->
+            <div id="juego-simpsons" class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hidden global-screen">
                 <span class="text-xs font-bold uppercase tracking-wider text-amber-500">Vocabulary Game 🍩</span>
                 <h2 class="text-2xl font-bold mt-1 mb-2 text-gray-900">The Simpsons Family Tree</h2>
                 <p class="text-sm text-gray-600 mb-6">Mira el árbol genealógico de abajo y haz clic en el botón de cualquier personaje para descubrir su parentesco en inglés:</p>
@@ -140,12 +142,12 @@
                 </div>
             </div>
 
-            <!-- SECCIÓN 3: Las Profesiones en Inglés -->
-            <div id="seccion-profesiones" class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 scroll-mt-6">
+            <!-- PANTALLA 3: Las Profesiones en Inglés (Oculto al inicio) -->
+            <div id="seccion-profesiones" class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hidden global-screen">
                 <span class="text-xs font-bold uppercase tracking-wider text-emerald-600">Vocabulary Part 2 💼</span>
                 <h2 class="text-2xl font-bold mt-1 mb-3 text-gray-900">Las Profesiones en Inglés</h2>
                 <p class="text-gray-600 mb-4 leading-relaxed">
-                    ¡Pronto sumaremos contenido interactivo aquí! Por ahora, repasemos estas tres profesiones clave que usaremos en clase:
+                    ¡Repasemos estas tres profesiones fundamentales que usaremos en las actividades de la clase de hoy!
                 </p>
                 
                 <div class="space-y-2">
@@ -169,11 +171,28 @@
 
     <!-- Lógica JavaScript -->
     <script>
-        // Nueva función para mover la pantalla sin cambiar de página
-        function irASeccion(idSeccion) {
-            const elemento = document.getElementById(idSeccion);
-            if (elemento) {
-                elemento.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Sistema dinámico de cambio de "pantallas"
+        function cambiarPantalla(idPantalla, botonActivo) {
+            // 1. Ocultamos todas las pantallas de contenido
+            const pantallas = document.querySelectorAll('.global-screen');
+            pantallas.forEach(p => p.classList.add('hidden'));
+
+            // 2. Mostramos la pantalla seleccionada
+            document.getElementById(idPantalla).classList.remove('hidden');
+
+            // 3. Reseteamos los estilos de todos los botones del menú lateral
+            const botones = document.querySelectorAll('aside button');
+            botones.forEach(btn => {
+                btn.className = "w-full text-left p-3 bg-gray-100 text-gray-600 rounded-xl font-medium cursor-pointer transition text-center md:text-left block border border-transparent";
+            });
+
+            // 4. Le ponemos color llamativo al botón que está activo según la sección
+            if (idPantalla === 'seccion-teoria') {
+                botonActivo.className = "w-full text-left p-3 bg-indigo-600 text-white rounded-xl font-medium cursor-pointer transition text-center md:text-left block shadow-sm";
+            } else if (idPantalla === 'juego-simpsons') {
+                botonActivo.className = "w-full text-left p-3 bg-amber-500 text-white rounded-xl font-medium cursor-pointer transition text-center md:text-left block shadow-sm";
+            } else if (idPantalla === 'seccion-profesiones') {
+                botonActivo.className = "w-full text-left p-3 bg-emerald-600 text-white rounded-xl font-medium cursor-pointer transition text-center md:text-left block shadow-sm";
             }
         }
 
