@@ -173,11 +173,11 @@
     <script>
         // Sistema dinámico de cambio de "pantallas"
         function cambiarPantalla(idPantalla, botonActivo) {
-            // 1. Ocultamos todas las pantallas de contenido
+            // 1. Ocultamos todas las pantallas de contenido por igual
             const pantallas = document.querySelectorAll('.global-screen');
             pantallas.forEach(p => p.classList.add('hidden'));
 
-            // 2. Mostramos la pantalla seleccionada
+            // 2. Mostramos de golpe la pantalla seleccionada
             document.getElementById(idPantalla).classList.remove('hidden');
 
             // 3. Reseteamos los estilos de todos los botones del menú lateral
