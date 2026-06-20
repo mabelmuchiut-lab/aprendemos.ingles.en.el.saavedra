@@ -5,74 +5,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clases de Inglés - Profe Belén</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        /* Animación para el giro del spinner */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .animate-spin-custom {
+            animation: spin 1s linear infinite;
+        }
+    </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
 
-    <!-- Barra de Navegación sin bandera -->
-    <nav class="bg-indigo-600 text-white shadow-md px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-2">
-        <h1 class="text-xl font-bold tracking-wide text-center sm:text-left">CLASES DE INGLÉS - PROFE BELÉN</h1>
-        <div class="flex items-center gap-4">
-            <span class="text-sm bg-indigo-700 px-3 py-1 rounded-full font-medium">Nivel: B1</span>
-            <span class="font-semibold text-sm">Progreso: 40%</span>
+    <!-- PANTALLA SPLASH (Se muestra al cargar) -->
+    <div id="splash-screen" class="fixed inset-0 bg-indigo-600 flex flex-col justify-center items-center z-50 transition-opacity duration-500">
+        <div class="text-center space-y-4">
+            <!-- Icono grande o emoji -->
+            <div class="text-6xl animate-bounce">📚</div>
+            <!-- Título de bienvenida -->
+            <h1 class="text-white text-3xl font-black tracking-wider uppercase px-4">
+                Welcome to English Class
+            </h1>
+            <p class="text-indigo-200 text-sm font-medium tracking-wide">
+                Preparando la lección de la Profe Belén...
+            </p>
+            <!-- Spinner de carga -->
+            <div class="w-10 h-10 border-4 border-indigo-200 border-t-white rounded-full animate-spin-custom mx-auto mt-4"></div>
         </div>
-    </nav>
+    </div>
 
-    <!-- Contenedor Principal -->
-    <main class="max-w-4xl mx-auto my-8 px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
-        
-        <!-- Columna Izquierda: Menú -->
-        <aside class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 h-fit">
-            <h3 class="font-bold text-lg mb-4 text-gray-700 border-b pb-2 border-gray-100">Alumnos de 4to. Año A y B</h3>
-            <div class="space-y-3">
-                <a href="index.html" class="w-full text-left p-3 bg-indigo-600 text-white rounded-xl font-medium transition text-center md:text-left block shadow-sm">
-                    🚀 1. ¡Arrancamos con todo!
-                </a>
-                <a href="simpsons.html" class="w-full text-left p-3 bg-gray-100 text-gray-600 hover:bg-amber-50 hover:text-amber-700 rounded-xl font-medium transition text-center md:text-left block border border-transparent">
-                    📝 2. Vemos los integrantes de la family en Ingles!!
-                </a>
-                <a href="profesiones.html" class="w-full text-left p-3 bg-gray-100 text-gray-600 hover:bg-emerald-50 hover:text-emerald-700 rounded-xl font-medium transition text-center md:text-left block border border-transparent">
-                    💼 3. Las Profesiones en Ingles
-                </a>
+    <!-- CONTENIDO PRINCIPAL DE LA WEB (Oculto al inicio) -->
+    <div id="main-content" class="opacity-0 transition-opacity duration-500">
+        <!-- Barra de Navegación -->
+        <nav class="bg-indigo-600 text-white shadow-md px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-2">
+            <h1 class="text-xl font-bold tracking-wide text-center sm:text-left">CLASES DE INGLÉS CON LA PROFE BELÉN</h1>
+            <div class="flex items-center gap-4">
+                <span class="text-sm bg-indigo-700 px-3 py-1 rounded-full font-medium">Nivel: B1</span>
+                <span class="font-semibold text-sm">Progreso: 40%</span>
             </div>
-        </aside>
+        </nav>
 
-        <!-- Columna Derecha -->
-        <section class="md:col-span-2 space-y-6">
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-6">
-                <div>
-                    <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">Lección 1</span>
-                    <h2 class="text-2xl font-bold mt-1 mb-3 text-gray-900">Present Simple vs. Present Continuous</h2>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        Usamos el <strong>Present Simple</strong> para rutinas u hechos generales (<em>"I work every day"</em>). Usamos el <strong>Present Continuous</strong> para acciones que están ocurriendo justo ahora (<em>"I am working right now"</em>).
-                    </p>
-                    
-                    <div class="bg-gray-50 p-4 rounded-xl border border-gray-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                        <div>
-                            <p class="font-semibold text-sm text-gray-700">🎧 Escucha el ejemplo:</p>
-                            <p class="text-xs text-gray-500 font-mono mt-0.5">"Hey! What are you doing?"</p>
+        <!-- Contenedor Principal -->
+        <main class="max-w-4xl mx-auto my-8 px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Columna Izquierda: Menú -->
+            <aside class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 h-fit">
+                <h3 class="font-bold text-lg mb-4 text-gray-700 border-b pb-2 border-gray-100">Alumnos de 4to. Año A y B</h3>
+                <div class="space-y-3">
+                    <a href="index.html" class="w-full text-left p-3 bg-indigo-600 text-white rounded-xl font-medium transition text-center md:text-left block shadow-sm">
+                        🚀 1. ¡Arrancamos con todo!
+                    </a>
+                    <a href="simpsons.html" class="w-full text-left p-3 bg-gray-100 text-gray-600 hover:bg-amber-50 hover:text-amber-700 rounded-xl font-medium transition text-center md:text-left block border border-transparent">
+                        📝 2. Vemos los integrantes de la family en Ingles!!
+                    </a>
+                    <a href="profesiones.html" class="w-full text-left p-3 bg-gray-100 text-gray-600 hover:bg-emerald-50 hover:text-emerald-700 rounded-xl font-medium transition text-center md:text-left block border border-transparent">
+                        💼 3. Las Profesiones en Ingles
+                    </a>
+                </div>
+            </aside>
+
+            <!-- Columna Derecha -->
+            <section class="md:col-span-2 space-y-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-6">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">Lección 1</span>
+                        <h2 class="text-2xl font-bold mt-1 mb-3 text-gray-900">Present Simple vs. Present Continuous</h2>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Usamos el <strong>Present Simple</strong> para rutinas u hechos generales (<em>"I work every day"</em>). Usamos el <strong>Present Continuous</strong> para acciones que están ocurriendo justo ahora (<em>"I am working right now"</em>).
+                        </p>
+                        
+                        <div class="bg-gray-50 p-4 rounded-xl border border-gray-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                            <div>
+                                <p class="font-semibold text-sm text-gray-700">🎧 Escucha el ejemplo:</p>
+                                <p class="text-xs text-gray-500 font-mono mt-0.5">"Hey! What are you doing?"</p>
+                            </div>
+                            <audio controls class="h-8 max-w-full">
+                                <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                            </audio>
                         </div>
-                        <audio controls class="h-8 max-w-full">
-                            <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
-                        </audio>
+                    </div>
+
+                    <div class="pt-6 border-t border-gray-100">
+                        <h3 class="font-bold text-base text-gray-900 mb-2">✏️ ¡Es tu turno de practicar!</h3>
+                        <div class="p-4 bg-amber-50 rounded-xl border border-amber-200 text-center font-serif text-base my-4 text-gray-800">
+                            "Look! It <span id="target-word" class="border-b-2 border-dashed border-amber-500 px-4 text-gray-400 font-sans font-medium">______</span> outside right now."
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <button onclick="verificarRespuesta(false, this, 'rains')" class="p-3 border border-gray-200 rounded-xl font-medium hover:bg-gray-50 text-left cursor-pointer option-btn text-sm">A) rains</button>
+                            <button onclick="verificarRespuesta(true, this, 'is raining')" class="p-3 border border-gray-200 rounded-xl font-medium hover:bg-gray-50 text-left cursor-pointer option-btn text-sm">B) is raining</button>
+                        </div>
+                        <p id="feedback" class="mt-4 text-center font-medium hidden p-3 rounded-xl text-sm"></p>
                     </div>
                 </div>
+            </section>
+        </main>
+    </div>
 
-                <div class="pt-6 border-t border-gray-100">
-                    <h3 class="font-bold text-base text-gray-900 mb-2">✏️ ¡Es tu turno de practicar!</h3>
-                    <div class="p-4 bg-amber-50 rounded-xl border border-amber-200 text-center font-serif text-base my-4 text-gray-800">
-                        "Look! It <span id="target-word" class="border-b-2 border-dashed border-amber-500 px-4 text-gray-400 font-sans font-medium">______</span> outside right now."
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <button onclick="verificarRespuesta(false, this, 'rains')" class="p-3 border border-gray-200 rounded-xl font-medium hover:bg-gray-50 text-left cursor-pointer option-btn text-sm">A) rains</button>
-                        <button onclick="verificarRespuesta(true, this, 'is raining')" class="p-3 border border-gray-200 rounded-xl font-medium hover:bg-gray-50 text-left cursor-pointer option-btn text-sm">B) is raining</button>
-                    </div>
-                    <p id="feedback" class="mt-4 text-center font-medium hidden p-3 rounded-xl text-sm"></p>
-                </div>
-            </div>
-        </section>
-    </main>
-
+    <!-- Lógica para controlar el Splash y el Quiz -->
     <script>
+        // Control del Splash Screen (2 segundos de duración)
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const splash = document.getElementById('splash-screen');
+                const content = document.getElementById('main-content');
+                
+                // Efecto de desvanecimiento
+                splash.classList.add('opacity-0');
+                content.classList.remove('opacity-0');
+                
+                // Eliminamos el splash del fondo para que deje clickear la web
+                setTimeout(() => splash.remove(), 500);
+            }, 2000); // 2000 milisegundos = 2 segundos
+        });
+
         function verificarRespuesta(esCorrecta, elemento, palabra) {
             const feedback = document.getElementById('feedback');
             const targetWord = document.getElementById('target-word');
