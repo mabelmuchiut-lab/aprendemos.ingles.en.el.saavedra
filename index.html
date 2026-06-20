@@ -4,51 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clases de Inglés - Profe Belén</title>
-    <!-- Cargamos Tailwind CSS para el diseño -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
 
-    <!-- Barra de Navegación -->
     <nav class="bg-indigo-600 text-white shadow-md px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-2">
-        <h1 class="text-xl font-bold tracking-wide text-center sm:text-left">
-            🇬🇧 CLASES DE INGLÉS CON LA PROFE BELÉN
-        </h1>
+        <h1 class="text-xl font-bold tracking-wide text-center sm:text-left">🇬🇧 CLASES DE INGLÉS CON LA PROFE BELÉN</h1>
         <div class="flex items-center gap-4">
             <span class="text-sm bg-indigo-700 px-3 py-1 rounded-full font-medium">Nivel: B1</span>
             <span class="font-semibold text-sm">Progreso: 40%</span>
         </div>
     </nav>
 
-    <!-- Contenedor Principal -->
     <main class="max-w-4xl mx-auto my-8 px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
         
-        <!-- Columna Izquierda: Menú de Navegación (Cambia de pantalla) -->
         <aside class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 h-fit">
-            <h3 class="font-bold text-lg mb-4 text-gray-700 border-b pb-2 border-gray-100">
-                Alumnos de 4to. Año A y B
-            </h3>
+            <h3 class="font-bold text-lg mb-4 text-gray-700 border-b pb-2 border-gray-100">Alumnos de 4to. Año A y B</h3>
             <div class="space-y-3">
-                <!-- Botón 1 -->
-                <button id="btn-teoria" onclick="cambiarPantalla('seccion-teoria', this)" class="w-full text-left p-3 bg-indigo-600 text-white rounded-xl font-medium cursor-pointer transition text-center md:text-left block shadow-sm">
+                <a href="index.html" class="w-full text-left p-3 bg-indigo-600 text-white rounded-xl font-medium transition text-center md:text-left block shadow-sm">
                     🚀 1. ¡Arrancamos con todo!
-                </button>
-                <!-- Botón 2 -->
-                <button id="btn-simpsons" onclick="cambiarPantalla('juego-simpsons', this)" class="w-full text-left p-3 bg-gray-100 text-gray-600 hover:bg-amber-50 hover:text-amber-700 rounded-xl font-medium cursor-pointer transition text-center md:text-left block border border-transparent">
+                </a>
+                <a href="simpsons.html" class="w-full text-left p-3 bg-gray-100 text-gray-600 hover:bg-amber-50 hover:text-amber-700 rounded-xl font-medium transition text-center md:text-left block border border-transparent">
                     📝 2. Vemos los integrantes de la family en Ingles!!
-                </button>
-                <!-- Botón 3 -->
-                <button id="btn-profesiones" onclick="cambiarPantalla('seccion-profesiones', this)" class="w-full text-left p-3 bg-gray-100 text-gray-600 hover:bg-emerald-50 hover:text-emerald-700 rounded-xl font-medium cursor-pointer transition text-center md:text-left block border border-transparent">
+                </a>
+                <a href="profesiones.html" class="w-full text-left p-3 bg-gray-100 text-gray-600 hover:bg-emerald-50 hover:text-emerald-700 rounded-xl font-medium transition text-center md:text-left block border border-transparent">
                     💼 3. Las Profesiones en Ingles
-                </button>
+                </a>
             </div>
         </aside>
 
-        <!-- Columna Derecha: Contenedor de Pantallas -->
-        <section class="md:col-span-2">
-            
-            <!-- PANTALLA 1: Bloque de Teoría (Visible por defecto) -->
-            <div id="seccion-teoria" class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-6 global-screen">
+        <section class="md:col-span-2 space-y-6">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-6">
                 <div>
                     <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">Lección 1</span>
                     <h2 class="text-2xl font-bold mt-1 mb-3 text-gray-900">Present Simple vs. Present Continuous</h2>
@@ -56,7 +42,6 @@
                         Usamos el <strong>Present Simple</strong> para rutinas u hechos generales (<em>"I work every day"</em>). Usamos el <strong>Present Continuous</strong> para acciones que están ocurriendo justo ahora (<em>"I am working right now"</em>).
                     </p>
                     
-                    <!-- Sección de Listening -->
                     <div class="bg-gray-50 p-4 rounded-xl border border-gray-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                         <div>
                             <p class="font-semibold text-sm text-gray-700">🎧 Escucha el ejemplo:</p>
@@ -64,180 +49,41 @@
                         </div>
                         <audio controls class="h-8 max-w-full">
                             <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
-                            Tu navegador no soporta el elemento de audio.
                         </audio>
                     </div>
                 </div>
 
-                <!-- Bloque de Práctica / Quiz -->
                 <div class="pt-6 border-t border-gray-100">
                     <h3 class="font-bold text-base text-gray-900 mb-2">✏️ ¡Es tu turno de practicar!</h3>
-                    <p class="text-xs text-gray-600 mb-4">Completa la siguiente oración eligiendo la opción correcta:</p>
-                    
                     <div class="p-4 bg-amber-50 rounded-xl border border-amber-200 text-center font-serif text-base my-4 text-gray-800">
                         "Look! It <span id="target-word" class="border-b-2 border-dashed border-amber-500 px-4 text-gray-400 font-sans font-medium">______</span> outside right now."
                     </div>
-
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <button onclick="verificarRespuesta(false, this, 'rains')" class="p-3 border border-gray-200 rounded-xl font-medium hover:bg-gray-50 active:scale-[0.98] transition text-left cursor-pointer option-btn text-sm">
-                            A) rains
-                        </button>
-                        <button onclick="verificarRespuesta(true, this, 'is raining')" class="p-3 border border-gray-200 rounded-xl font-medium hover:bg-gray-50 active:scale-[0.98] transition text-left cursor-pointer option-btn text-sm">
-                            B) is raining
-                        </button>
+                        <button onclick="verificarRespuesta(false, this, 'rains')" class="p-3 border border-gray-200 rounded-xl font-medium hover:bg-gray-50 text-left cursor-pointer option-btn text-sm">A) rains</button>
+                        <button onclick="verificarRespuesta(true, this, 'is raining')" class="p-3 border border-gray-200 rounded-xl font-medium hover:bg-gray-50 text-left cursor-pointer option-btn text-sm">B) is raining</button>
                     </div>
                     <p id="feedback" class="mt-4 text-center font-medium hidden p-3 rounded-xl text-sm"></p>
                 </div>
             </div>
-
-            <!-- PANTALLA 2: JUEGO: Árbol Genealógico (Oculto al inicio) -->
-            <div id="juego-simpsons" class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hidden global-screen">
-                <span class="text-xs font-bold uppercase tracking-wider text-amber-500">Vocabulary Game 🍩</span>
-                <h2 class="text-2xl font-bold mt-1 mb-2 text-gray-900">The Simpsons Family Tree</h2>
-                <p class="text-sm text-gray-600 mb-6">Mira el árbol genealógico de abajo y haz clic en el botón de cualquier personaje para descubrir su parentesco en inglés:</p>
-                
-                <!-- Imagen del Árbol Genealógico -->
-                <div class="mb-6 flex justify-center bg-gray-100 p-2 rounded-xl border border-gray-200">
-                    <img src="simpsons.jpg" alt="The Simpsons Family Tree" class="max-w-full h-auto rounded-lg shadow-sm">
-                </div>
-
-                <!-- Botones de los Personajes -->
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-6">
-                    <button onclick="mostrarFamiliar('Homer', 'Father / Dad', 'Fá-der / Dæd', 'Homer is Bart\'s father.')" class="p-2.5 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-xl font-bold text-center transition transform active:scale-95 cursor-pointer text-gray-800 text-sm">
-                        👨‍🦲 Homer
-                    </button>
-                    <button onclick="mostrarFamiliar('Marge', 'Mother / Mom', 'Má-der / Mám', 'Marge is Lisa\'s mother.')" class="p-2.5 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-xl font-bold text-center transition transform active:scale-95 cursor-pointer text-gray-800 text-sm">
-                        👩‍🦱 Marge
-                    </button>
-                    <button onclick="mostrarFamiliar('Bart', 'Brother', 'Brá-der', 'Bart is Maggie\'s brother.')" class="p-2.5 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-xl font-bold text-center transition transform active:scale-95 cursor-pointer text-gray-800 text-sm">
-                        👦 Bart
-                    </button>
-                    <button onclick="mostrarFamiliar('Lisa', 'Sister', 'Sís-ter', 'Lisa is Bart\'s sister.')" class="p-2.5 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-xl font-bold text-center transition transform active:scale-95 cursor-pointer text-gray-800 text-sm">
-                        👧 Lisa
-                    </button>
-                    <button onclick="mostrarFamiliar('Maggie', 'Sister', 'Sís-ter', 'Maggie is the youngest sister of the family.')" class="p-2.5 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-xl font-bold text-center transition transform active:scale-95 cursor-pointer text-gray-800 text-sm">
-                        👶 Maggie
-                    </button>
-                    <button onclick="mostrarFamiliar('Herb Powell', 'Uncle', 'Án-kl', 'Herb is Bart\'s uncle.')" class="p-2.5 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-xl font-bold text-center transition transform active:scale-95 cursor-pointer text-gray-800 text-sm">
-                        👨💼 Herb
-                    </button>
-                    <button onclick="mostrarFamiliar('Patty / Selma', 'Aunt', 'Ant', 'Patty and Selma are Lisa\'s aunts.')" class="p-2.5 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-xl font-bold text-center transition transform active:scale-95 cursor-pointer text-gray-800 text-sm">
-                        👩‍🦰 Patty / Selma
-                    </button>
-                    <button onclick="mostrarFamiliar('Abraham / Abe', 'Grandfather / Grandpa', 'Grænd-fá-der', 'Abe is Bart\'s grandfather.')" class="p-2.5 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-xl font-bold text-center transition transform active:scale-95 cursor-pointer text-gray-800 text-sm">
-                        👴 Abraham (Grandpa)
-                    </button>
-                    <button onclick="mostrarFamiliar('Ling Bouvier', 'Cousin', 'Cá-sin', 'Ling is Bart, Lisa, and Maggie\'s cousin.')" class="p-2.5 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-xl font-bold text-center transition transform active:scale-95 cursor-pointer text-gray-800 text-sm">
-                        👧 Ling
-                    </button>
-                </div>
-
-                <!-- Tarjeta Dinámica de Resultados -->
-                <div id="simpsons-card" class="hidden p-5 bg-gradient-to-r from-amber-50 to-orange-50 border-2 border-amber-400 rounded-2xl shadow-inner text-center">
-                    <h4 id="simp-nombre" class="text-lg font-black text-amber-600 uppercase tracking-wide"></h4>
-                    <p class="text-gray-500 text-xs my-1">Parentesco en Inglés:</p>
-                    <div id="simp-ingles" class="text-3xl font-extrabold text-indigo-700 my-2"></div>
-                    <p id="simp-pronunciacion" class="text-sm italic text-gray-600 font-mono bg-white inline-block px-3 py-1 rounded-full shadow-sm border border-gray-100 mb-3"></p>
-                    <p id="simp-ejemplo" class="text-gray-700 font-medium bg-indigo-50 p-3 rounded-xl border border-indigo-100 text-sm"></p>
-                </div>
-            </div>
-
-            <!-- PANTALLA 3: Las Profesiones en Inglés (Oculto al inicio) -->
-            <div id="seccion-profesiones" class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hidden global-screen">
-                <span class="text-xs font-bold uppercase tracking-wider text-emerald-600">Vocabulary Part 2 💼</span>
-                <h2 class="text-2xl font-bold mt-1 mb-3 text-gray-900">Las Profesiones en Inglés</h2>
-                <p class="text-gray-600 mb-4 leading-relaxed">
-                    ¡Repasemos estas tres profesiones fundamentales que usaremos en las actividades de la clase de hoy!
-                </p>
-                
-                <div class="space-y-2">
-                    <div class="p-3 bg-emerald-50 rounded-xl border border-emerald-100 flex justify-between items-center">
-                        <span class="font-bold text-gray-800">🧑‍🏫 Teacher</span>
-                        <span class="text-sm italic text-gray-500">Profesor/a</span>
-                    </div>
-                    <div class="p-3 bg-emerald-50 rounded-xl border border-emerald-100 flex justify-between items-center">
-                        <span class="font-bold text-gray-800">🧑‍⚕️ Doctor</span>
-                        <span class="text-sm italic text-gray-500">Médico/a</span>
-                    </div>
-                    <div class="p-3 bg-emerald-50 rounded-xl border border-emerald-100 flex justify-between items-center">
-                        <span class="font-bold text-gray-800">👷 Engineer</span>
-                        <span class="text-sm italic text-gray-500">Ingeniero/a</span>
-                    </div>
-                </div>
-            </div>
-
         </section>
     </main>
 
-    <!-- Lógica JavaScript -->
     <script>
-        // Sistema dinámico de cambio de "pantallas"
-        function cambiarPantalla(idPantalla, botonActivo) {
-            // 1. Ocultamos todas las pantallas de contenido por igual
-            const pantallas = document.querySelectorAll('.global-screen');
-            pantallas.forEach(p => p.classList.add('hidden'));
-
-            // 2. Mostramos de golpe la pantalla seleccionada
-            document.getElementById(idPantalla).classList.remove('hidden');
-
-            // 3. Reseteamos los estilos de todos los botones del menú lateral
-            const botones = document.querySelectorAll('aside button');
-            botones.forEach(btn => {
-                btn.className = "w-full text-left p-3 bg-gray-100 text-gray-600 rounded-xl font-medium cursor-pointer transition text-center md:text-left block border border-transparent";
-            });
-
-            // 4. Le ponemos color llamativo al botón que está activo según la sección
-            if (idPantalla === 'seccion-teoria') {
-                botonActivo.className = "w-full text-left p-3 bg-indigo-600 text-white rounded-xl font-medium cursor-pointer transition text-center md:text-left block shadow-sm";
-            } else if (idPantalla === 'juego-simpsons') {
-                botonActivo.className = "w-full text-left p-3 bg-amber-500 text-white rounded-xl font-medium cursor-pointer transition text-center md:text-left block shadow-sm";
-            } else if (idPantalla === 'seccion-profesiones') {
-                botonActivo.className = "w-full text-left p-3 bg-emerald-600 text-white rounded-xl font-medium cursor-pointer transition text-center md:text-left block shadow-sm";
-            }
-        }
-
-        function mostrarFamiliar(nombre, parentescoIngles, pronunciacion, ejemplo) {
-            const tarjeta = document.getElementById('simpsons-card');
-            const txtNombre = document.getElementById('simp-nombre');
-            const txtIngles = document.getElementById('simp-ingles');
-            const txtPronunciacion = document.getElementById('simp-pronunciacion');
-            const txtEjemplo = document.getElementById('simp-ejemplo');
-
-            txtNombre.innerText = nombre;
-            txtIngles.innerText = parentescoIngles;
-            txtPronunciacion.innerText = `Pronunciación: / ${pronunciacion} /`;
-            txtEjemplo.innerText = `💡 Ejemplo: ${ejemplo}`;
-
-            tarjeta.classList.remove('hidden');
-        }
-
         function verificarRespuesta(esCorrecta, elemento, palabra) {
             const feedback = document.getElementById('feedback');
             const targetWord = document.getElementById('target-word');
             const botones = document.querySelectorAll('.option-btn');
-            
-            botones.forEach(btn => {
-                btn.classList.remove('bg-green-100', 'border-green-400', 'bg-red-100', 'border-red-400 text-gray-800');
-            });
-
-            feedback.classList.remove('hidden', 'bg-green-50', 'text-green-700', 'bg-red-50', 'text-red-700');
-            
+            botones.forEach(btn => btn.className = "p-3 border border-gray-200 rounded-xl font-medium hover:bg-gray-50 text-left cursor-pointer option-btn text-sm");
+            feedback.className = "mt-4 text-center font-medium hidden p-3 rounded-xl text-sm";
             if (esCorrecta) {
-                feedback.innerText = "🎉 ¡Excelente! Usamos Present Continuous por la frase clave 'right now'.";
-                feedback.classList.add('bg-green-50', 'text-green-700');
+                feedback.innerText = "🎉 ¡Excelente! Usamos Present Continuous por 'right now'.";
+                feedback.classList.add('bg-green-50', 'text-green-700', 'block');
                 elemento.classList.add('bg-green-100', 'border-green-400');
-                
                 targetWord.innerText = palabra;
-                targetWord.classList.remove('text-gray-400', 'border-dashed');
-                targetWord.classList.add('text-indigo-600', 'border-solid');
             } else {
-                feedback.innerText = "❌ Inténtalo de nuevo. Recuerda que es una acción que está pasando en este preciso momento.";
-                feedback.classList.add('bg-red-50', 'text-red-700');
+                feedback.innerText = "❌ Inténtalo de nuevo.";
+                feedback.classList.add('bg-red-50', 'text-red-700', 'block');
                 elemento.classList.add('bg-red-100', 'border-red-400');
-                
-                targetWord.innerText = "______";
-                targetWord.classList.add('text-gray-400', 'border-dashed');
-                targetWord.classList.remove('text-indigo-600', 'border-solid');
             }
         }
     </script>
