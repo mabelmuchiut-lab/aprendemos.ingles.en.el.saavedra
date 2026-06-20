@@ -5,78 +5,127 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clases de Inglés - Profe Belén</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .animate-spin-custom {
+            animation: spin 1s linear infinite;
+        }
+    </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
-    
-    <!-- Barra de Navegación -->
-    <nav class="bg-indigo-600 text-white shadow-md px-6 py-3 flex flex-col sm:flex-row justify-between items-center gap-3">
-        <div class="flex items-center gap-3">
-            <img src="logo.jpg" alt="Logo IPEM" class="w-10 h-10 object-contain bg-white rounded-full p-0.5 shadow-sm">
-            <h1 class="text-lg font-black tracking-wide text-center sm:text-left uppercase">
-                Clases de Inglés - Profe Belén
-            </h1>
-        </div>
-        <div class="flex items-center gap-4">
-            <span class="text-xs bg-indigo-800 px-3 py-1 rounded-full font-medium border border-indigo-500">IPEM N°181</span>
-            <span class="font-semibold text-sm">Progreso: 40%</span>
-        </div>
-    </nav>
 
-    <!-- Contenedor Principal -->
-    <main class="max-w-4xl mx-auto my-8 px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Columna Izquierda: Menú -->
-        <aside class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 h-fit">
-            <h3 class="font-bold text-lg mb-4 text-gray-700 border-b pb-2 border-gray-100">Alumnos de 4to. Año A y B</h3>
-            <div class="space-y-3">
-                <a href="index.html" class="w-full text-left p-3 bg-indigo-600 text-white rounded-xl font-medium transition text-center md:text-left block shadow-sm">
-                    🚀 1. ¡Arrancamos con todo!
-                </a>
-                <a href="simpsons.html" class="w-full text-left p-3 bg-gray-100 text-gray-600 hover:bg-amber-50 hover:text-amber-700 rounded-xl font-medium transition text-center md:text-left block border border-transparent">
-                    📝 2. Vemos los integrantes de la family en Ingles!!
-                </a>
-                <a href="profesiones.html" class="w-full text-left p-3 bg-gray-100 text-gray-600 hover:bg-emerald-50 hover:text-emerald-700 rounded-xl font-medium transition text-center md:text-left block border border-transparent">
-                    💼 3. Las Profesiones en Ingles
-                </a>
+    <!-- PANTALLA SPLASH CON EL LOGO DEL IPEM (Configurada a 4 segundos) -->
+    <div id="splash-screen" class="fixed inset-0 bg-indigo-900 flex flex-col justify-center items-center z-50 transition-opacity duration-500">
+        <div class="text-center space-y-5 max-w-xs px-4">
+            <!-- Imagen del Logo Institucional -->
+            <div class="bg-white p-2 rounded-full shadow-lg inline-block animate-bounce">
+                <img src="logo.jpg" alt="Logo IPEM N°181" class="w-28 h-28 object-contain rounded-full">
             </div>
-        </aside>
+            
+            <div class="space-y-2">
+                <h1 class="text-white text-2xl font-black tracking-wider uppercase">
+                    Welcome to English Class
+                </h1>
+                <p class="text-indigo-200 text-xs font-semibold tracking-wide uppercase">
+                    IPEM N°181 Brig. Gral. Cornelio de Saavedra
+                </p>
+                <p class="text-indigo-300 text-xs italic">
+                    Preparando la lección de la Profe Belén...
+                </p>
+            </div>
+            
+            <!-- Spinner de carga -->
+            <div class="w-8 h-8 border-4 border-indigo-400 border-t-white rounded-full animate-spin-custom mx-auto"></div>
+        </div>
+    </div>
 
-        <!-- Columna Derecha -->
-        <section class="md:col-span-2 space-y-6">
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-6">
-                <div>
-                    <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">Lección 1</span>
-                    <h2 class="text-2xl font-bold mt-1 mb-3 text-gray-900">Present Simple vs. Present Continuous</h2>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        Usamos el <strong>Present Simple</strong> para rutinas u hechos generales (<em>"I work every day"</em>). Usamos el <strong>Present Continuous</strong> para acciones que están ocurriendo justo ahora (<em>"I am working right now"</em>).
-                    </p>
-                    
-                    <div class="bg-gray-50 p-4 rounded-xl border border-gray-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                        <div>
-                            <p class="font-semibold text-sm text-gray-700">🎧 Escucha el ejemplo:</p>
-                            <p class="text-xs text-gray-500 font-mono mt-0.5">"Hey! What are you doing?"</p>
+    <!-- CONTENIDO PRINCIPAL DE LA WEB -->
+    <div id="main-content" class="opacity-0 transition-opacity duration-500">
+        
+        <!-- Barra de Navegación -->
+        <nav class="bg-indigo-600 text-white shadow-md px-6 py-3 flex flex-col sm:flex-row justify-between items-center gap-3">
+            <div class="flex items-center gap-3">
+                <img src="logo.jpg" alt="Logo IPEM" class="w-10 h-10 object-contain bg-white rounded-full p-0.5 shadow-sm">
+                <h1 class="text-lg font-black tracking-wide text-center sm:text-left uppercase">
+                    Clases de Inglés - Profe Belén
+                </h1>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="text-xs bg-indigo-800 px-3 py-1 rounded-full font-medium border border-indigo-500">IPEM N°181</span>
+                <span class="font-semibold text-sm">Progreso: 40%</span>
+            </div>
+        </nav>
+
+        <!-- Contenedor Principal -->
+        <main class="max-w-4xl mx-auto my-8 px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Columna Izquierda: Menú -->
+            <aside class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 h-fit">
+                <h3 class="font-bold text-lg mb-4 text-gray-700 border-b pb-2 border-gray-100">Alumnos de 4to. Año A y B</h3>
+                <div class="space-y-3">
+                    <a href="index.html" class="w-full text-left p-3 bg-indigo-600 text-white rounded-xl font-medium transition text-center md:text-left block shadow-sm">
+                        🚀 1. ¡Arrancamos con todo!
+                    </a>
+                    <a href="simpsons.html" class="w-full text-left p-3 bg-gray-100 text-gray-600 hover:bg-amber-50 hover:text-amber-700 rounded-xl font-medium transition text-center md:text-left block border border-transparent">
+                        📝 2. Vemos los integrantes de la family en Ingles!!
+                    </a>
+                    <a href="profesiones.html" class="w-full text-left p-3 bg-gray-100 text-gray-600 hover:bg-emerald-50 hover:text-emerald-700 rounded-xl font-medium transition text-center md:text-left block border border-transparent">
+                        💼 3. Las Profesiones en Ingles
+                    </a>
+                </div>
+            </aside>
+
+            <!-- Columna Derecha -->
+            <section class="md:col-span-2 space-y-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-6">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">Lección 1</span>
+                        <h2 class="text-2xl font-bold mt-1 mb-3 text-gray-900">Present Simple vs. Present Continuous</h2>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Usamos el <strong>Present Simple</strong> para rutinas u hechos generales (<em>"I work every day"</em>). Usamos el <strong>Present Continuous</strong> para acciones que están ocurriendo justo ahora (<em>"I am working right now"</em>).
+                        </p>
+                        
+                        <div class="bg-gray-50 p-4 rounded-xl border border-gray-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                            <div>
+                                <p class="font-semibold text-sm text-gray-700">🎧 Escucha el ejemplo:</p>
+                                <p class="text-xs text-gray-500 font-mono mt-0.5">"Hey! What are you doing?"</p>
+                            </div>
+                            <audio controls class="h-8 max-w-full">
+                                <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                            </audio>
                         </div>
-                        <audio controls class="h-8 max-w-full">
-                            <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
-                        </audio>
                     </div>
-                </div>
 
-                <div class="pt-6 border-t border-gray-100">
-                    <h3 class="font-bold text-base text-gray-900 mb-2">✏️ ¡Es tu turno de practicar!</h3>
-                    <div class="p-4 bg-amber-50 rounded-xl border border-amber-200 text-center font-serif text-base my-4 text-gray-800">
-                        "Look! It <span id="target-word" class="border-b-2 border-dashed border-amber-500 px-4 text-gray-400 font-sans font-medium">______</span> outside right now."
+                    <div class="pt-6 border-t border-gray-100">
+                        <h3 class="font-bold text-base text-gray-900 mb-2">✏️ ¡Es tu turno de practicar!</h3>
+                        <div class="p-4 bg-amber-50 rounded-xl border border-amber-200 text-center font-serif text-base my-4 text-gray-800">
+                            "Look! It <span id="target-word" class="border-b-2 border-dashed border-amber-500 px-4 text-gray-400 font-sans font-medium">______</span> outside right now."
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <button onclick="verificarRespuesta(false, this, 'rains')" class="p-3 border border-gray-200 rounded-xl font-medium hover:bg-gray-50 text-left cursor-pointer option-btn text-sm">A) rains</button>
+                            <button onclick="verificarRespuesta(true, this, 'is raining')" class="p-3 border border-gray-200 rounded-xl font-medium hover:bg-gray-50 text-left cursor-pointer option-btn text-sm">B) is raining</button>
+                        </div>
+                        <p id="feedback" class="mt-4 text-center font-medium hidden p-3 rounded-xl text-sm"></p>
                     </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <button onclick="verificarRespuesta(false, this, 'rains')" class="p-3 border border-gray-200 rounded-xl font-medium hover:bg-gray-50 text-left cursor-pointer option-btn text-sm">A) rains</button>
-                        <button onclick="verificarRespuesta(true, this, 'is raining')" class="p-3 border border-gray-200 rounded-xl font-medium hover:bg-gray-50 text-left cursor-pointer option-btn text-sm">B) is raining</button>
-                    </div>
-                    <p id="feedback" class="mt-4 text-center font-medium hidden p-3 rounded-xl text-sm"></p>
                 </div>
-            </div>
-        </section>
-    </main>
+            </section>
+        </main>
+    </div>
 
     <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            // Configurado a 4000 ms (4 segundos)
+            setTimeout(() => {
+                const splash = document.getElementById('splash-screen');
+                const content = document.getElementById('main-content');
+                splash.classList.add('opacity-0');
+                content.classList.remove('opacity-0');
+                setTimeout(() => splash.remove(), 500);
+            }, 4000); 
+        });
+
         function verificarRespuesta(esCorrecta, elemento, palabra) {
             const feedback = document.getElementById('feedback');
             const targetWord = document.getElementById('target-word');
