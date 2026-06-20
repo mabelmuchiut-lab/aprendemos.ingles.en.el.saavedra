@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenida - Clases de Inglés</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Redirección automática a los 4 segundos por seguridad si falla el JavaScript -->
+    <meta http-equiv="refresh" content="4;url=index.html">
+    <style>
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .animate-spin-custom {
+            animation: spin 1s linear infinite;
+        }
+    </style>
+</head>
+<body class="bg-indigo-900 flex flex-col justify-center items-center min-h-screen font-sans m-0">
+
+    <div class="text-center space-y-5 max-w-xs px-4">
+        <!-- Imagen del Logo Institucional -->
+        <div class="bg-white p-2 rounded-full shadow-lg inline-block animate-bounce">
+            <img src="logo.jpg" alt="Logo IPEM N°181" class="w-28 h-28 object-contain rounded-full">
+        </div>
+        
+        <div class="space-y-2">
+            <h1 class="text-white text-2xl font-black tracking-wider uppercase">
+                Welcome to English Class
+            </h1>
+            <p class="text-indigo-200 text-xs font-semibold tracking-wide uppercase">
+                IPEM N°181 Brig. Gral. Cornelio de Saavedra
+            </p>
+            <p class="text-indigo-300 text-xs italic">
+                Preparando la lección de la Profe Belén...
+            </p>
+        </div>
+        
+        <!-- Spinner de carga -->
+        <div class="w-8 h-8 border-4 border-indigo-400 border-t-white rounded-full animate-spin-custom mx-auto"></div>
+    </div>
+
+    <script>
+        // Al cumplir los 4 segundos (4000 ms), salta al index.html
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 4000); 
+        });
+    </script>
+</body>
+</html>
