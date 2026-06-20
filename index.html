@@ -6,7 +6,6 @@
     <title>Clases de Inglés - Profe Belén</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
-        /* Animación para el giro del spinner */
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
@@ -18,30 +17,44 @@
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
 
-    <!-- PANTALLA SPLASH (Se muestra al cargar) -->
-    <div id="splash-screen" class="fixed inset-0 bg-indigo-600 flex flex-col justify-center items-center z-50 transition-opacity duration-500">
-        <div class="text-center space-y-4">
-            <!-- Icono grande o emoji -->
-            <div class="text-6xl animate-bounce">📚</div>
-            <!-- Título de bienvenida -->
-            <h1 class="text-white text-3xl font-black tracking-wider uppercase px-4">
-                Welcome to English Class
-            </h1>
-            <p class="text-indigo-200 text-sm font-medium tracking-wide">
-                Preparando la lección de la Profe Belén...
-            </p>
+    <!-- PANTALLA SPLASH CON EL LOGO DEL IPEM -->
+    <div id="splash-screen" class="fixed inset-0 bg-indigo-900 flex flex-col justify-center items-center z-50 transition-opacity duration-500">
+        <div class="text-center space-y-5 max-w-xs px-4">
+            <!-- Imagen del Logo Institucional -->
+            <div class="bg-white p-2 rounded-full shadow-lg inline-block animate-bounce">
+                <img src="logo.jpg" alt="Logo IPEM N°181" class="w-28 h-28 object-contain rounded-full">
+            </div>
+            
+            <div class="space-y-2">
+                <h1 class="text-white text-2xl font-black tracking-wider uppercase">
+                    Welcome to English Class
+                </h1>
+                <p class="text-indigo-200 text-xs font-semibold tracking-wide uppercase">
+                    IPEM N°181 Brig. Gral. Cornelio de Saavedra
+                </p>
+                <p class="text-indigo-300 text-xs italic">
+                    Preparando la lección de la Profe Belén...
+                </p>
+            </div>
+            
             <!-- Spinner de carga -->
-            <div class="w-10 h-10 border-4 border-indigo-200 border-t-white rounded-full animate-spin-custom mx-auto mt-4"></div>
+            <div class="w-8 h-8 border-4 border-indigo-400 border-t-white rounded-full animate-spin-custom mx-auto"></div>
         </div>
     </div>
 
-    <!-- CONTENIDO PRINCIPAL DE LA WEB (Oculto al inicio) -->
+    <!-- CONTENIDO PRINCIPAL DE LA WEB -->
     <div id="main-content" class="opacity-0 transition-opacity duration-500">
-        <!-- Barra de Navegación -->
-        <nav class="bg-indigo-600 text-white shadow-md px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-2">
-            <h1 class="text-xl font-bold tracking-wide text-center sm:text-left">CLASES DE INGLÉS CON LA PROFE BELÉN</h1>
+        
+        <!-- Barra de Navegación con el Logo Incorporado -->
+        <nav class="bg-indigo-650 text-white shadow-md px-6 py-3 flex flex-col sm:flex-row justify-between items-center gap-3">
+            <div class="flex items-center gap-3">
+                <img src="logo.jpg" alt="Logo IPEM" class="w-10 h-10 object-contain bg-white rounded-full p-0.5 shadow-sm">
+                <h1 class="text-lg font-black tracking-wide text-center sm:text-left uppercase">
+                    Clases de Inglés - Profe Belén
+                </h1>
+            </div>
             <div class="flex items-center gap-4">
-                <span class="text-sm bg-indigo-700 px-3 py-1 rounded-full font-medium">Nivel: B1</span>
+                <span class="text-xs bg-indigo-800 px-3 py-1 rounded-full font-medium border border-indigo-500">IPEM N°181</span>
                 <span class="font-semibold text-sm">Progreso: 40%</span>
             </div>
         </nav>
@@ -101,21 +114,15 @@
         </main>
     </div>
 
-    <!-- Lógica para controlar el Splash y el Quiz -->
     <script>
-        // Control del Splash Screen (2 segundos de duración)
         window.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 const splash = document.getElementById('splash-screen');
                 const content = document.getElementById('main-content');
-                
-                // Efecto de desvanecimiento
                 splash.classList.add('opacity-0');
                 content.classList.remove('opacity-0');
-                
-                // Eliminamos el splash del fondo para que deje clickear la web
                 setTimeout(() => splash.remove(), 500);
-            }, 2000); // 2000 milisegundos = 2 segundos
+            }, 2000);
         });
 
         function verificarRespuesta(esCorrecta, elemento, palabra) {
