@@ -65,42 +65,50 @@
                 </div>
             </div>
 
-            <!-- NUEVO JUEGO: La Familia de Los Simpson -->
+            <!-- JUEGO ACTUALIZADO: Árbol Genealógico con Imagen -->
             <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
                 <span class="text-xs font-bold uppercase tracking-wider text-amber-500">Vocabulary Game 🍩</span>
                 <h2 class="text-2xl font-bold mt-1 mb-2 text-gray-900">The Simpsons Family Tree</h2>
-                <p class="text-sm text-gray-600 mb-6">¡Haz clic sobre cualquier personaje para descubrir cómo se dice su parentesco en inglés!</p>
+                <p class="text-sm text-gray-600 mb-6">Mira el árbol genealógico de abajo y haz clic en el botón de cualquier personaje para descubrir su parentesco en inglés:</p>
                 
-                <!-- Botones de los Personajes -->
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-                    <button onclick="mostrarFamiliar('Homer', 'Father / Dad', 'Fá-der / Dæd', 'Homer is Bart\'s father.')" class="p-3 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-xl font-bold text-center transition transform active:scale-95 cursor-pointer text-gray-800">
+                <!-- Imagen del Árbol Genealógico -->
+                <div class="mb-6 flex justify-center bg-gray-100 p-2 rounded-xl border border-gray-200">
+                    <img src="DBZ_Simpsons_Family_Tree_by_Marruche_web.jpg" alt="The Simpsons Family Tree" class="max-w-full h-auto rounded-lg shadow-sm">
+                </div>
+
+                <!-- Botones de los Personajes organizados -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-6">
+                    <button onclick="mostrarFamiliar('Homer', 'Father / Dad', 'Fá-der / Dæd', 'Homer is Bart\'s father.')" class="p-2.5 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-xl font-bold text-center transition transform active:scale-95 cursor-pointer text-gray-800 text-sm">
                         👨‍🦲 Homer
                     </button>
-                    <button onclick="mostrarFamiliar('Marge', 'Mother / Mom', 'Má-der / Mám', 'Marge is Lisa\'s mother.')" class="p-3 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-xl font-bold text-center transition transform active:scale-95 cursor-pointer text-gray-800">
+                    <button onclick="mostrarFamiliar('Marge', 'Mother / Mom', 'Má-der / Mám', 'Marge is Lisa\'s mother.')" class="p-2.5 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-xl font-bold text-center transition transform active:scale-95 cursor-pointer text-gray-800 text-sm">
                         👩‍🦱 Marge
                     </button>
-                    <button onclick="mostrarFamiliar('Bart', 'Brother', 'Brá-der', 'Bart is Maggie\'s brother.')" class="p-3 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-xl font-bold text-center transition transform active:scale-95 cursor-pointer text-gray-800">
+                    <button onclick="mostrarFamiliar('Bart', 'Brother', 'Brá-der', 'Bart is Maggie\'s brother.')" class="p-2.5 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-xl font-bold text-center transition transform active:scale-95 cursor-pointer text-gray-800 text-sm">
                         👦 Bart
                     </button>
-                    <button onclick="mostrarFamiliar('Lisa', 'Sister', 'Sís-ter', 'Lisa is Bart\'s sister.')" class="p-3 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-xl font-bold text-center transition transform active:scale-95 cursor-pointer text-gray-800">
+                    <button onclick="mostrarFamiliar('Lisa', 'Sister', 'Sís-ter', 'Lisa is Bart\'s sister.')" class="p-2.5 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-xl font-bold text-center transition transform active:scale-95 cursor-pointer text-gray-800 text-sm">
                         👧 Lisa
                     </button>
-                    <button onclick="mostrarFamiliar('Herb Powell', 'Uncle', 'Án-kl', 'Herb is Homer\'s half-brother, so he is Bart\'s uncle.')" class="p-3 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-xl font-bold text-center transition transform active:scale-95 cursor-pointer text-gray-800">
+                    <button onclick="mostrarFamiliar('Maggie', 'Sister', 'Sís-ter', 'Maggie is the youngest sister of the family.')" class="p-2.5 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-xl font-bold text-center transition transform active:scale-95 cursor-pointer text-gray-800 text-sm">
+                        👶 Maggie
+                    </button>
+                    <button onclick="mostrarFamiliar('Herb Powell', 'Uncle', 'Án-kl', 'Herb is Bart\'s uncle.')" class="p-2.5 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-xl font-bold text-center transition transform active:scale-95 cursor-pointer text-gray-800 text-sm">
                         👨💼 Herb
                     </button>
-                    <button onclick="mostrarFamiliar('Patty / Selma', 'Aunt', 'Ant', 'Patty and Selma are Lisa\'s aunts.')" class="p-3 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-xl font-bold text-center transition transform active:scale-95 cursor-pointer text-gray-800">
+                    <button onclick="mostrarFamiliar('Patty / Selma', 'Aunt', 'Ant', 'Patty and Selma are Lisa\'s aunts.')" class="p-2.5 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-xl font-bold text-center transition transform active:scale-95 cursor-pointer text-gray-800 text-sm">
                         👩‍🦰 Patty / Selma
                     </button>
-                    <button onclick="mostrarFamiliar('Abe Simpson', 'Grandfather / Grandpa', 'Grænd-fá-der', 'Abe is the grandfather of the family.')" class="p-3 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-xl font-bold text-center transition transform active:scale-95 cursor-pointer text-gray-800">
-                        👴 Abe (Grandpa)
+                    <button onclick="mostrarFamiliar('Abraham / Abe', 'Grandfather / Grandpa', 'Grænd-fá-der', 'Abe is Bart\'s grandfather.')" class="p-2.5 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-xl font-bold text-center transition transform active:scale-95 cursor-pointer text-gray-800 text-sm">
+                        👴 Abraham (Grandpa)
                     </button>
-                    <button onclick="mostrarFamiliar('Ling Bouvier', 'Cousin', 'Cá-sin', 'Ling is Bart, Lisa, and Maggie\'s cousin.')" class="p-3 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-xl font-bold text-center transition transform active:scale-95 cursor-pointer text-gray-800">
-                        👶 Ling
+                    <button onclick="mostrarFamiliar('Ling Bouvier', 'Cousin', 'Cá-sin', 'Ling is Bart, Lisa, and Maggie\'s cousin.')" class="p-2.5 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-xl font-bold text-center transition transform active:scale-95 cursor-pointer text-gray-800 text-sm">
+                        👧 Ling
                     </button>
                 </div>
 
                 <!-- Tarjeta Dinámica de Resultados -->
-                <div id="simpsons-card" class="hidden p-5 bg-gradient-to-r from-amber-50 to-orange-50 border-2 border-amber-400 rounded-2xl shadow-inner text-center animate-fade-in">
+                <div id="simpsons-card" class="hidden p-5 bg-gradient-to-r from-amber-50 to-orange-50 border-2 border-amber-400 rounded-2xl shadow-inner text-center">
                     <h4 id="simp-nombre" class="text-lg font-black text-amber-600 uppercase tracking-wide"></h4>
                     <p class="text-gray-500 text-xs my-1">Parentesco en Inglés:</p>
                     <div id="simp-ingles" class="text-3xl font-extrabold text-indigo-700 my-2"></div>
@@ -135,7 +143,6 @@
 
     <!-- Lógica JavaScript -->
     <script>
-        // Nueva función para manejar la sección de Los Simpson
         function mostrarFamiliar(nombre, parentescoIngles, pronunciacion, ejemplo) {
             const tarjeta = document.getElementById('simpsons-card');
             const txtNombre = document.getElementById('simp-nombre');
@@ -143,13 +150,11 @@
             const txtPronunciacion = document.getElementById('simp-pronunciacion');
             const txtEjemplo = document.getElementById('simp-ejemplo');
 
-            // Insertar datos dinámicamente
             txtNombre.innerText = nombre;
             txtIngles.innerText = parentescoIngles;
             txtPronunciacion.innerText = `Pronunciación: / ${pronunciacion} /`;
             txtEjemplo.innerText = `💡 Ejemplo: ${ejemplo}`;
 
-            // Mostrar la tarjeta con una transición suave
             tarjeta.classList.remove('hidden');
         }
 
