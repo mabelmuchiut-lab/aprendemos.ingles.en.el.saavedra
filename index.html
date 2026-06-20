@@ -23,31 +23,25 @@
     <!-- Contenedor Principal -->
     <main class="max-w-4xl mx-auto my-8 px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
         
-        <!-- Columna Izquierda: Menú con Botones de Derivación -->
+        <!-- Columna Izquierda: Menú con BOTONES REALES de Derivación -->
         <aside class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 h-fit sticky top-6">
             <h3 class="font-bold text-lg mb-4 text-gray-700 border-b pb-2 border-gray-100">
                 Alumnos de 4to. Año A y B
             </h3>
-            <ul class="space-y-3">
-                <!-- Botón 1: Arrancamos con todo -->
-                <li>
-                    <a href="#seccion-teoria" class="block p-3 bg-indigo-50 text-indigo-700 rounded-xl font-medium border border-indigo-200 cursor-pointer transition hover:bg-indigo-100 text-center md:text-left">
-                        🚀 1. ¡Arrancamos con todo!
-                    </a>
-                </li>
-                <!-- Botón 2: Integrantes de la familia -->
-                <li>
-                    <a href="#juego-simpsons" class="block p-3 bg-amber-50 text-amber-700 rounded-xl font-medium border border-amber-200 cursor-pointer transition hover:bg-amber-100 text-center md:text-left">
-                        📝 2. Vemos los integrantes de la family en Ingles!!
-                    </a>
-                </li>
-                <!-- Botón 3: Las profesiones -->
-                <li>
-                    <a href="#seccion-profesiones" class="block p-3 bg-emerald-50 text-emerald-700 rounded-xl font-medium border border-emerald-200 cursor-pointer transition hover:bg-emerald-100 text-center md:text-left">
-                        💼 3. Las Profesiones en Ingles
-                    </a>
-                </li>
-            </ul>
+            <div class="space-y-3">
+                <!-- Botón 1 -->
+                <button onclick="irASeccion('seccion-teoria')" class="w-full text-left p-3 bg-indigo-50 text-indigo-700 rounded-xl font-medium border border-indigo-200 cursor-pointer transition hover:bg-indigo-100 text-center md:text-left block">
+                    🚀 1. ¡Arrancamos con todo!
+                </button>
+                <!-- Botón 2 -->
+                <button onclick="irASeccion('juego-simpsons')" class="w-full text-left p-3 bg-amber-50 text-amber-700 rounded-xl font-medium border border-amber-200 cursor-pointer transition hover:bg-amber-100 text-center md:text-left block">
+                    📝 2. Vemos los integrantes de la family en Ingles!!
+                </button>
+                <!-- Botón 3 -->
+                <button onclick="irASeccion('seccion-profesiones')" class="w-full text-left p-3 bg-emerald-50 text-emerald-700 rounded-xl font-medium border border-emerald-200 cursor-pointer transition hover:bg-emerald-100 text-center md:text-left block">
+                    💼 3. Las Profesiones en Ingles
+                </button>
+            </div>
         </aside>
 
         <!-- Columna Derecha: Contenido de las Lecciones -->
@@ -175,6 +169,14 @@
 
     <!-- Lógica JavaScript -->
     <script>
+        // Nueva función para mover la pantalla sin cambiar de página
+        function irASeccion(idSeccion) {
+            const elemento = document.getElementById(idSeccion);
+            if (elemento) {
+                elemento.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
         function mostrarFamiliar(nombre, parentescoIngles, pronunciacion, ejemplo) {
             const tarjeta = document.getElementById('simpsons-card');
             const txtNombre = document.getElementById('simp-nombre');
@@ -215,8 +217,8 @@
                 elemento.classList.add('bg-red-100', 'border-red-400');
                 
                 targetWord.innerText = "______";
-                targetWord.add('text-gray-400', 'border-dashed');
-                targetWord.remove('text-indigo-600', 'border-solid');
+                targetWord.classList.add('text-gray-400', 'border-dashed');
+                targetWord.classList.remove('text-indigo-600', 'border-solid');
             }
         }
     </script>
