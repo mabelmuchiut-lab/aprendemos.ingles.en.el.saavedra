@@ -23,32 +23,38 @@
     <!-- Contenedor Principal -->
     <main class="max-w-4xl mx-auto my-8 px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
         
-        <!-- Columna Izquierda: Secciones de 4to Año -->
-        <aside class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 h-fit">
+        <!-- Columna Izquierda: Menú con Botones de Derivación -->
+        <aside class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 h-fit sticky top-6">
             <h3 class="font-bold text-lg mb-4 text-gray-700 border-b pb-2 border-gray-100">
                 Alumnos de 4to. Año A y B
             </h3>
             <ul class="space-y-3">
-                <li class="p-3 bg-indigo-50 text-indigo-700 rounded-xl font-medium border border-indigo-200 cursor-pointer">
-                    🚀 1. ¡Arrancamos con todo!
-                </li>
-                <!-- El botón ahora es un enlace que lleva al juego de abajo -->
+                <!-- Botón 1: Arrancamos con todo -->
                 <li>
-                    <a href="#juego-simpsons" class="block p-3 hover:bg-indigo-50 hover:text-indigo-700 rounded-xl cursor-pointer transition border border-transparent hover:border-indigo-200 text-gray-600 font-medium">
+                    <a href="#seccion-teoria" class="block p-3 bg-indigo-50 text-indigo-700 rounded-xl font-medium border border-indigo-200 cursor-pointer transition hover:bg-indigo-100 text-center md:text-left">
+                        🚀 1. ¡Arrancamos con todo!
+                    </a>
+                </li>
+                <!-- Botón 2: Integrantes de la familia -->
+                <li>
+                    <a href="#juego-simpsons" class="block p-3 bg-amber-50 text-amber-700 rounded-xl font-medium border border-amber-200 cursor-pointer transition hover:bg-amber-100 text-center md:text-left">
                         📝 2. Vemos los integrantes de la family en Ingles!!
                     </a>
                 </li>
-                <li class="p-3 hover:bg-gray-50 text-gray-600 rounded-xl cursor-pointer transition">
-                    💼 3. Las Profesiones en Ingles
+                <!-- Botón 3: Las profesiones -->
+                <li>
+                    <a href="#seccion-profesiones" class="block p-3 bg-emerald-50 text-emerald-700 rounded-xl font-medium border border-emerald-200 cursor-pointer transition hover:bg-emerald-100 text-center md:text-left">
+                        💼 3. Las Profesiones en Ingles
+                    </a>
                 </li>
             </ul>
         </aside>
 
-        <!-- Columna Derecha: Contenido de la Lección -->
+        <!-- Columna Derecha: Contenido de las Lecciones -->
         <section class="md:col-span-2 space-y-6">
             
-            <!-- Bloque de Teoría -->
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+            <!-- SECCIÓN 1: Bloque de Teoría (Arrancamos con todo) -->
+            <div id="seccion-teoria" class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 scroll-mt-6">
                 <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">Lección 1</span>
                 <h2 class="text-2xl font-bold mt-1 mb-3 text-gray-900">Present Simple vs. Present Continuous</h2>
                 <p class="text-gray-600 mb-4 leading-relaxed">
@@ -66,9 +72,29 @@
                         Tu navegador no soporta el elemento de audio.
                     </audio>
                 </div>
+
+                <!-- Bloque de Práctica / Quiz -->
+                <div class="mt-6 pt-6 border-t border-gray-100">
+                    <h3 class="font-bold text-base text-gray-900 mb-2">✏️ ¡Es tu turno de practicar!</h3>
+                    <p class="text-xs text-gray-600 mb-4">Completa la siguiente oración eligiendo la opción correcta:</p>
+                    
+                    <div class="p-4 bg-amber-50 rounded-xl border border-amber-200 text-center font-serif text-base my-4 text-gray-800">
+                        "Look! It <span id="target-word" class="border-b-2 border-dashed border-amber-500 px-4 text-gray-400 font-sans font-medium">______</span> outside right now."
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <button onclick="verificarRespuesta(false, this, 'rains')" class="p-3 border border-gray-200 rounded-xl font-medium hover:bg-gray-50 active:scale-[0.98] transition text-left cursor-pointer option-btn text-sm">
+                            A) rains
+                        </button>
+                        <button onclick="verificarRespuesta(true, this, 'is raining')" class="p-3 border border-gray-200 rounded-xl font-medium hover:bg-gray-50 active:scale-[0.98] transition text-left cursor-pointer option-btn text-sm">
+                            B) is raining
+                        </button>
+                    </div>
+                    <p id="feedback" class="mt-4 text-center font-medium hidden p-3 rounded-xl text-sm"></p>
+                </div>
             </div>
 
-            <!-- JUEGO: Árbol Genealógico (ID añadido para el salto de pantalla) -->
+            <!-- SECCIÓN 2: JUEGO: Árbol Genealógico (Integrantes de la familia) -->
             <div id="juego-simpsons" class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 scroll-mt-6">
                 <span class="text-xs font-bold uppercase tracking-wider text-amber-500">Vocabulary Game 🍩</span>
                 <h2 class="text-2xl font-bold mt-1 mb-2 text-gray-900">The Simpsons Family Tree</h2>
@@ -120,25 +146,28 @@
                 </div>
             </div>
 
-            <!-- Bloque de Práctica / Quiz -->
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                <h3 class="font-bold text-lg text-gray-900 mb-2">✏️ ¡Es tu turno de practicar!</h3>
-                <p class="text-sm text-gray-600 mb-4">Completa la siguiente oración eligiendo la opción correcta:</p>
+            <!-- SECCIÓN 3: Las Profesiones en Inglés -->
+            <div id="seccion-profesiones" class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 scroll-mt-6">
+                <span class="text-xs font-bold uppercase tracking-wider text-emerald-600">Vocabulary Part 2 💼</span>
+                <h2 class="text-2xl font-bold mt-1 mb-3 text-gray-900">Las Profesiones en Inglés</h2>
+                <p class="text-gray-600 mb-4 leading-relaxed">
+                    ¡Pronto sumaremos contenido interactivo aquí! Por ahora, repasemos estas tres profesiones clave que usaremos en clase:
+                </p>
                 
-                <div class="p-4 bg-amber-50 rounded-xl border border-amber-200 text-center font-serif text-lg my-4 text-gray-800">
-                    "Look! It <span id="target-word" class="border-b-2 border-dashed border-amber-500 px-4 text-gray-400 font-sans font-medium">______</span> outside right now."
+                <div class="space-y-2">
+                    <div class="p-3 bg-emerald-50 rounded-xl border border-emerald-100 flex justify-between items-center">
+                        <span class="font-bold text-gray-800">🧑‍🏫 Teacher</span>
+                        <span class="text-sm italic text-gray-500">Profesor/a</span>
+                    </div>
+                    <div class="p-3 bg-emerald-50 rounded-xl border border-emerald-100 flex justify-between items-center">
+                        <span class="font-bold text-gray-800">🧑‍⚕️ Doctor</span>
+                        <span class="text-sm italic text-gray-500">Médico/a</span>
+                    </div>
+                    <div class="p-3 bg-emerald-50 rounded-xl border border-emerald-100 flex justify-between items-center">
+                        <span class="font-bold text-gray-800">👷 Engineer</span>
+                        <span class="text-sm italic text-gray-500">Ingeniero/a</span>
+                    </div>
                 </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <button onclick="verificarRespuesta(false, this, 'rains')" class="p-3 border border-gray-200 rounded-xl font-medium hover:bg-gray-50 active:scale-[0.98] transition text-left cursor-pointer option-btn">
-                        A) rains
-                    </button>
-                    <button onclick="verificarRespuesta(true, this, 'is raining')" class="p-3 border border-gray-200 rounded-xl font-medium hover:bg-gray-50 active:scale-[0.98] transition text-left cursor-pointer option-btn">
-                        B) is raining
-                    </button>
-                </div>
-
-                <p id="feedback" class="mt-4 text-center font-medium hidden p-3 rounded-xl"></p>
             </div>
 
         </section>
@@ -186,8 +215,8 @@
                 elemento.classList.add('bg-red-100', 'border-red-400');
                 
                 targetWord.innerText = "______";
-                targetWord.classList.add('text-gray-400', 'border-dashed');
-                targetWord.classList.remove('text-indigo-600', 'border-solid');
+                targetWord.add('text-gray-400', 'border-dashed');
+                targetWord.remove('text-indigo-600', 'border-solid');
             }
         }
     </script>
